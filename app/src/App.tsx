@@ -4,9 +4,13 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import FluidBackground from './components/FluidBackground';
 import Navigation from './components/Navigation';
+import WhatsAppFab from './components/WhatsAppFab';
 import HeroField from './sections/HeroField';
+import StatsBar from './sections/StatsBar';
 import PhilosophyCarousel from './sections/PhilosophyCarousel';
 import ImmersiveGallery from './sections/ImmersiveGallery';
+import ProcessSteps from './sections/ProcessSteps';
+import Testimonials from './sections/Testimonials';
 import MediumsGlossary from './sections/MediumsGlossary';
 import Footer from './sections/Footer';
 import ProjectDetail from './pages/ProjectDetail';
@@ -102,9 +106,14 @@ function App() {
     <div style={{ position: 'relative' }}>
       <FluidBackground isActive={fluidActive} />
       <Navigation />
+      <WhatsAppFab />
 
       <div id="hero-section" style={{ position: 'relative', zIndex: 1 }}>
         <HeroField />
+      </div>
+
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <StatsBar />
       </div>
 
       <div id="philosophy" style={{ position: 'relative', zIndex: 2 }}>
@@ -116,6 +125,12 @@ function App() {
       </div>
 
       <div style={{ position: 'relative', zIndex: 50 }}>
+        <div id="process">
+          <ProcessSteps />
+        </div>
+        <div id="testimonials">
+          <Testimonials />
+        </div>
         <div id="mediums">
           <MediumsGlossary />
         </div>

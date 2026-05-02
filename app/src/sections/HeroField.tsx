@@ -124,41 +124,81 @@ export default function HeroField() {
           )}
 
           {heroConfig.ctaText && (
-            <button
-              className="font-sans-body"
-              onClick={() => {
-                if (heroConfig.ctaTargetId) {
-                  document
-                    .getElementById(heroConfig.ctaTargetId)
-                    ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-              style={{
-                background: 'rgba(255,255,255,0.08)',
-                border: '1px solid rgba(255,255,255,0.5)',
-                borderRadius: '40px',
-                padding: '14px 32px',
-                color: '#ffffff',
-                fontSize: '13px',
-                letterSpacing: '0.15em',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                backdropFilter: 'blur(6px)',
-                WebkitBackdropFilter: 'blur(6px)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255,255,255,0.18)';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.8)';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              {heroConfig.ctaText}
-            </button>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <button
+                className="font-sans-body"
+                onClick={() => {
+                  if (heroConfig.ctaTargetId) {
+                    document
+                      .getElementById(heroConfig.ctaTargetId)
+                      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                style={{
+                  background: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.5)',
+                  borderRadius: '40px',
+                  padding: '14px 32px',
+                  color: '#ffffff',
+                  fontSize: '13px',
+                  letterSpacing: '0.15em',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  backdropFilter: 'blur(6px)',
+                  WebkitBackdropFilter: 'blur(6px)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.18)';
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.8)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                {heroConfig.ctaText}
+              </button>
+
+              {heroConfig.ctaSecondaryText && (
+                <button
+                  className="font-sans-body"
+                  onClick={() => {
+                    if (heroConfig.ctaSecondaryTargetId) {
+                      document
+                        .getElementById(heroConfig.ctaSecondaryTargetId)
+                        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  style={{
+                    background: 'rgba(48,176,208,0.15)',
+                    border: '1px solid rgba(48,176,208,0.6)',
+                    borderRadius: '40px',
+                    padding: '14px 32px',
+                    color: '#30B0D0',
+                    fontSize: '13px',
+                    letterSpacing: '0.15em',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    backdropFilter: 'blur(6px)',
+                    WebkitBackdropFilter: 'blur(6px)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(48,176,208,0.28)';
+                    e.currentTarget.style.borderColor = '#30B0D0';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(48,176,208,0.15)';
+                    e.currentTarget.style.borderColor = 'rgba(48,176,208,0.6)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  {heroConfig.ctaSecondaryText}
+                </button>
+              )}
+            </div>
           )}
         </div>
       </div>

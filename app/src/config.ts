@@ -23,6 +23,8 @@ export interface HeroConfig {
   descriptionLine2: string
   ctaText: string
   ctaTargetId: string
+  ctaSecondaryText: string
+  ctaSecondaryTargetId: string
 }
 
 export interface PhilosophyConfig {
@@ -97,6 +99,7 @@ export const navigationConfig: NavigationConfig = {
   brandMark: "HK",
   links: [
     { label: "Universities", targetId: "gallery" },
+    { label: "Process", targetId: "process" },
     { label: "Services", targetId: "mediums" },
     { label: "Contact", targetId: "footer" },
   ],
@@ -109,8 +112,10 @@ export const heroConfig: HeroConfig = {
   titleLine2: "Malaysia",
   descriptionLine1: "Pakistan's trusted partner for university recruitment",
   descriptionLine2: "and student placement across Malaysia.",
-  ctaText: "Explore Now",
-  ctaTargetId: "philosophy",
+  ctaText: "Explore Universities",
+  ctaTargetId: "gallery",
+  ctaSecondaryText: "Free Consultation",
+  ctaSecondaryTargetId: "footer",
 }
 
 export const philosophyConfig: PhilosophyConfig = {
@@ -245,6 +250,16 @@ export const mediumsConfig: MediumsConfig = {
       en: "POST-ARRIVAL",
       description: "Our commitment continues after you land. Airport pickup, accommodation assistance, local orientation, and ongoing support throughout your studies. HK Education Worldwide stays connected to ensure your success abroad.",
     },
+    {
+      cn: "Guide",
+      en: "CAREER GUIDANCE",
+      description: "Expert guidance on aligning your degree choice with long-term career goals. We map Malaysian qualifications to Pakistani job markets, Gulf region opportunities, and international career pathways so your investment pays off.",
+    },
+    {
+      cn: "Scholar",
+      en: "SCHOLARSHIP SEARCH",
+      description: "We identify and help you apply for merit-based, need-based, and country-specific scholarships across our partner universities — often reducing total tuition by 20–50% for eligible Pakistani students.",
+    },
   ],
 }
 
@@ -287,4 +302,112 @@ export const projectDetailConfig: ProjectDetailConfig = {
 
 export function getProjectById(id: string): ProjectData | undefined {
   return galleryConfig.projects.find((p) => p.id === id)
+}
+
+// ─── New Sections ─────────────────────────────────────────────────────────────
+
+export interface StatItem {
+  value: string
+  label: string
+}
+
+export interface StatsConfig {
+  items: StatItem[]
+}
+
+export interface ProcessStep {
+  number: string
+  title: string
+  description: string
+}
+
+export interface ProcessConfig {
+  sectionLabel: string
+  title: string
+  steps: ProcessStep[]
+}
+
+export interface Testimonial {
+  quote: string
+  name: string
+  detail: string
+}
+
+export interface TestimonialsConfig {
+  sectionLabel: string
+  title: string
+  items: Testimonial[]
+}
+
+export interface WhatsAppConfig {
+  number: string
+  message: string
+}
+
+export const statsConfig: StatsConfig = {
+  items: [
+    { value: "500+", label: "Students Placed" },
+    { value: "5+", label: "Partner Universities" },
+    { value: "95%", label: "Visa Approval Rate" },
+    { value: "8+", label: "Years of Experience" },
+  ],
+}
+
+export const processConfig: ProcessConfig = {
+  sectionLabel: "HOW IT WORKS",
+  title: "Your Journey to Malaysia",
+  steps: [
+    {
+      number: "01",
+      title: "Free Consultation",
+      description: "A no-commitment session to understand your profile, goals, and budget. We listen first, then advise.",
+    },
+    {
+      number: "02",
+      title: "University Match",
+      description: "We shortlist best-fit universities and programs — comparing rankings, tuition, intakes, and career outcomes.",
+    },
+    {
+      number: "03",
+      title: "Application Support",
+      description: "Document preparation, SOP writing, and direct submission to your chosen university on your behalf.",
+    },
+    {
+      number: "04",
+      title: "Visa Processing",
+      description: "End-to-end EMGS student pass — from offer letter to full approval and pre-departure briefing.",
+    },
+    {
+      number: "05",
+      title: "Arrival & Beyond",
+      description: "Airport pickup, accommodation help, orientation, and continued support throughout your degree.",
+    },
+  ],
+}
+
+export const testimonialsConfig: TestimonialsConfig = {
+  sectionLabel: "STUDENT STORIES",
+  title: "Voices from Malaysia",
+  items: [
+    {
+      quote: "Getting into Monash Malaysia seemed impossible from Lahore — the paperwork, the visa, everything felt overwhelming. HK Education handled it all, including picking me up from KLIA on arrival day.",
+      name: "Ahmad Raza",
+      detail: "BSc Computer Science — Monash University Malaysia",
+    },
+    {
+      quote: "I was nervous about studying so far from home. The team stayed on WhatsApp every step of the way. Application to visa approval took under three months.",
+      name: "Aisha Siddiqui",
+      detail: "BBA — Taylor's University, Subang Jaya",
+    },
+    {
+      quote: "My parents needed convincing — the HEC recognition, the halal environment, the cost comparison. Two years into engineering at XMUM and I have zero regrets.",
+      name: "Omar Farooq",
+      detail: "BEng Mechanical Engineering — Xiamen University Malaysia",
+    },
+  ],
+}
+
+export const whatsappConfig: WhatsAppConfig = {
+  number: "923001234567",
+  message: "Hi, I'm interested in studying in Malaysia. Can you guide me?",
 }
