@@ -70,12 +70,22 @@ export default function HeroField() {
               style={{
                 fontSize: isMobile ? '11px' : '12px',
                 letterSpacing: '0.3em',
-                color: 'rgba(255,255,255,0.75)',
+                color: '#30B0D0',
                 textTransform: 'uppercase',
                 marginBottom: '28px',
                 textShadow,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
               }}
             >
+              <span style={{
+                display: 'inline-block',
+                width: '20px',
+                height: '1px',
+                background: '#30B0D0',
+                flexShrink: 0,
+              }} />
               {heroConfig.eyebrow}
             </p>
           )}

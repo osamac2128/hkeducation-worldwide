@@ -64,6 +64,8 @@ export interface MediumItem {
 
 export interface MediumsConfig {
   sectionLabel: string
+  titleHighlight: string
+  titleRest: string
   items: MediumItem[]
 }
 
@@ -107,11 +109,11 @@ export const navigationConfig: NavigationConfig = {
 
 export const heroConfig: HeroConfig = {
   wordmarkText: "HK Education",
-  eyebrow: "Your Gateway to Malaysian Universities",
+  eyebrow: "Student Recruitment Agency",
   titleLine1: "Study in",
   titleLine2: "Malaysia",
-  descriptionLine1: "Pakistan's trusted partner for university recruitment",
-  descriptionLine2: "and student placement across Malaysia.",
+  descriptionLine1: "Pakistan's dedicated student recruitment agency",
+  descriptionLine2: "for university placement across Malaysia.",
   ctaText: "Explore Universities",
   ctaTargetId: "gallery",
   ctaSecondaryText: "Free Consultation",
@@ -122,7 +124,7 @@ export const philosophyConfig: PhilosophyConfig = {
   eyebrow: "Why Malaysia",
   title: "The Smart Choice",
   body: "With tuition fees 60% lower than Western countries, English-medium instruction, and a welcoming Muslim-friendly environment, Malaysia hosts over 3,800 Pakistani students. HK Education Worldwide simplifies your journey from Pakistan to a world-class degree.",
-  rollingWords: ["AFFORDABLE", "RECOGNIZED", "ENGLISH", "ISLAMIC", "QUALITY", "FUTURE"],
+  rollingWords: ["RECRUITMENT", "AFFORDABLE", "RECOGNIZED", "ENGLISH", "ISLAMIC", "QUALITY", "FUTURE", "PLACEMENT"],
 }
 
 export const galleryConfig: GalleryConfig = {
@@ -229,6 +231,8 @@ export const galleryConfig: GalleryConfig = {
 
 export const mediumsConfig: MediumsConfig = {
   sectionLabel: "WHAT WE DO",
+  titleHighlight: "Student Recruitment",
+  titleRest: " & Guidance Services",
   items: [
     {
       cn: "Counsel",

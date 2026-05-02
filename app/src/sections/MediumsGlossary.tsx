@@ -30,11 +30,25 @@ export default function MediumsGlossary() {
             letterSpacing: '0.3em',
             color: 'rgba(237,232,228,0.35)',
             textTransform: 'uppercase',
-            marginBottom: isMobile ? '40px' : '56px',
+            marginBottom: '20px',
           }}
         >
           {mediumsConfig.sectionLabel}
         </p>
+
+        <h2
+          className="font-serif-display"
+          style={{
+            fontSize: isMobile ? 'clamp(26px, 7vw, 36px)' : 'clamp(32px, 3.5vw, 52px)',
+            fontWeight: 200,
+            lineHeight: 1.25,
+            margin: `0 0 ${isMobile ? '40px' : '56px'}`,
+            letterSpacing: '0.03em',
+          }}
+        >
+          <span style={{ color: '#30B0D0' }}>{mediumsConfig.titleHighlight}</span>
+          <span style={{ color: '#EDE8E4' }}>{mediumsConfig.titleRest}</span>
+        </h2>
 
         <div
           style={{
