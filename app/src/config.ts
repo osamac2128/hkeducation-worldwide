@@ -123,7 +123,7 @@ export const heroConfig: HeroConfig = {
 export const philosophyConfig: PhilosophyConfig = {
   eyebrow: "Why Malaysia",
   title: "The Smart Choice",
-  body: "With tuition fees 60% lower than Western countries, English-medium instruction, and a welcoming Muslim-friendly environment, Malaysia hosts over 3,800 Pakistani students. HK Education Worldwide simplifies your journey from Pakistan to a world-class degree.",
+  body: "With tuition fees 60% lower than Western countries, English-medium instruction, and a welcoming Muslim-friendly environment, Malaysia hosts over 3,800 Pakistani students. HK Education Worldwide is Pakistan's trusted student recruitment agency, simplifying your journey from application to a world-class degree.",
   rollingWords: ["RECRUITMENT", "AFFORDABLE", "RECOGNIZED", "ENGLISH", "ISLAMIC", "QUALITY", "FUTURE", "PLACEMENT"],
 }
 
@@ -208,22 +208,22 @@ export const galleryConfig: GalleryConfig = {
       ],
     },
     {
-      id: "taylors-university",
-      title: "Taylor's",
-      location: "Subang Jaya",
-      year: "Est. 1969",
+      id: "inti-university",
+      title: "Inti",
+      location: "Nilai / Subang",
+      year: "Est. 1986",
       image: "images/project-4.jpg",
-      subtitle: "Malaysia's top private university for graduate employability",
+      subtitle: "A leading private university for career-focused education and industry partnerships",
       meta: [
-        { label: "TYPE", value: "Private University" },
-        { label: "RANK", value: "QS World #253" },
+        { label: "TYPE", value: "Private University & College" },
+        { label: "RANK", value: "QS 5-Star Rated" },
         { label: "INTAKE", value: "Jan, Mar, Aug" },
-        { label: "FEES", value: "$6,000–15,000/yr" },
+        { label: "FEES", value: "$4,000–12,000/yr" },
       ],
       paragraphs: [
-        "Taylor's University has established itself as Malaysia's most popular private university, consistently ranking highest for graduate employability and employer reputation. Its partnership with Lancaster University (UK) enables dual-degree programs that amplify your credentials on the global stage.",
-        "The university's hospitality and leisure management program ranks among the world's best, while its business, design, and engineering programs are equally distinguished. Taylor's Lakeside Campus is a modern architectural marvel set around a stunning central lake — an inspiring environment for focused study.",
-        "HKEducation recommends Taylor's to Pakistani students seeking industry-focused education with strong internship and career placement outcomes. We provide specialized counseling on Taylor's dual-degree pathways, scholarship opportunities, and the university's rolling intake system that offers flexible start dates throughout the year.",
+        "INTI International University and College is one of Malaysia's most established private higher education institutions, with a strong reputation for industry-relevant programs and graduate employability. With campuses in Nilai and Subang Jaya, INTI offers a comprehensive range of Foundation, Diploma, Bachelor's, and Master's programs in fields such as business, engineering, computing, health sciences, and hospitality.",
+        "Through partnerships with renowned universities in the UK, USA, and Australia, INTI provides students with globally recognized degrees and transfer pathways. The university's emphasis on practical learning, internships, and industry collaboration ensures graduates are job-ready from day one — a significant advantage for Pakistani students seeking strong return on their educational investment.",
+        "HK Education Worldwide partners with INTI to offer Pakistani students streamlined admission, scholarship guidance, and comprehensive pre-departure support. Whether you're looking for affordable tuition, fast-track degrees, or strong career services, INTI International University and College is an excellent choice for your Malaysian study journey.",
       ],
     },
   ],
@@ -268,7 +268,7 @@ export const mediumsConfig: MediumsConfig = {
 }
 
 export const footerConfig: FooterConfig = {
-  visionText: "We believe every Pakistani student deserves access to world-class education. Malaysia offers that opportunity — affordable, recognized, and culturally welcoming. HK Education Worldwide is your bridge from aspiration to achievement.",
+  visionText: "We believe every Pakistani student deserves access to world-class education. Malaysia offers that opportunity — affordable, recognized, and culturally welcoming. Through dedicated student recruitment and personalized guidance, HK Education Worldwide is your bridge from aspiration to achievement.",
   brandName: "HK Education",
   columns: [
     {
@@ -401,7 +401,7 @@ export const testimonialsConfig: TestimonialsConfig = {
     {
       quote: "I was nervous about studying so far from home. The team stayed on WhatsApp every step of the way. Application to visa approval took under three months.",
       name: "Aisha Siddiqui",
-      detail: "BBA — Taylor's University, Subang Jaya",
+      detail: "BBA — INTI International University and College",
     },
     {
       quote: "My parents needed convincing — the HEC recognition, the halal environment, the cost comparison. Two years into engineering at XMUM and I have zero regrets.",

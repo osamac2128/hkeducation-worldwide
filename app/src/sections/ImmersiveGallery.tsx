@@ -86,7 +86,7 @@ export default function ImmersiveGallery({ onSelect }: Props) {
               >
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} — partner university in Malaysia for Pakistani students via HK Education Worldwide`}
                   style={{
                     width: '100%',
                     height: '100%',

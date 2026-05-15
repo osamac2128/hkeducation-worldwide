@@ -1,10 +1,12 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import FluidBackground from './components/FluidBackground';
 import Navigation from './components/Navigation';
 import WhatsAppFab from './components/WhatsAppFab';
+import SEO from './components/SEO';
 import HeroField from './sections/HeroField';
 import StatsBar from './sections/StatsBar';
 import PhilosophyCarousel from './sections/PhilosophyCarousel';
@@ -95,18 +97,26 @@ function App() {
 
   if (selectedProject) {
     return (
-      <div style={{ position: 'relative' }}>
-        <FluidBackground isActive={true} />
-        <ProjectDetail project={selectedProject} onBack={handleBack} />
-      </div>
+      <HelmetProvider>
+        <SEO
+          title={`${selectedProject.title} — HK Education Worldwide | Study in Malaysia`}
+          description={selectedProject.subtitle}
+        />
+        <div style={{ position: 'relative' }}>
+          <FluidBackground isActive={true} />
+          <ProjectDetail project={selectedProject} onBack={handleBack} />
+        </div>
+      </HelmetProvider>
     );
   }
 
   return (
-    <div style={{ position: 'relative' }}>
-      <FluidBackground isActive={fluidActive} />
-      <Navigation />
-      <WhatsAppFab />
+    <HelmetProvider>
+      <SEO />
+      <div style={{ position: 'relative' }}>
+        <FluidBackground isActive={fluidActive} />
+        <Navigation />
+        <WhatsAppFab />
 
       <div id="hero-section" style={{ position: 'relative', zIndex: 1 }}>
         <HeroField />
@@ -138,7 +148,8 @@ function App() {
           <Footer />
         </div>
       </div>
-    </div>
+      </div>
+    </HelmetProvider>
   );
 }
 
