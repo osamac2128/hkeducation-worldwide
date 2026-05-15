@@ -275,7 +275,7 @@ export const footerConfig: FooterConfig = {
       heading: "CONTACT",
       entries: [
         { text: "info@hkeducationworldwide.com", href: "mailto:info@hkeducationworldwide.com" },
-        { text: "+92 300 1234567", href: "tel:+923001234567" },
+        { text: "+60 10-434 9259", href: "tel:+60104349259" },
         { text: "Islamabad, Pakistan" },
       ],
     },
@@ -412,6 +412,6 @@ export const testimonialsConfig: TestimonialsConfig = {
 }
 
 export const whatsappConfig: WhatsAppConfig = {
-  number: "923001234567",
+  number: "60104349259",
   message: "Hi, I'm interested in studying in Malaysia. Can you guide me?",
 }
