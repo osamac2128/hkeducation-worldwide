@@ -2,7 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import { navigationConfig } from '../config';
 import { useIsMobile } from '../hooks/useMediaQuery';
 
-export default function Navigation() {
+interface Props {
+  onSubpageClick?: (pageId: string) => void;
+}
+
+export default function Navigation({ onSubpageClick }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -33,8 +37,12 @@ export default function Navigation() {
     };
   }, [menuOpen]);
 
-  const handleNavClick = (id: string) => {
+  const handleNavClick = (id: string, subpage?: string) => {
     setMenuOpen(false);
+    if (subpage && onSubpageClick) {
+      onSubpageClick(subpage);
+      return;
+    }
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -129,7 +137,7 @@ export default function Navigation() {
             {navigationConfig.links.map((item) => (
               <button
                 key={item.targetId}
-                onClick={() => handleNavClick(item.targetId)}
+                onClick={() => handleNavClick(item.targetId, item.subpage)}
                 className="font-sans-body"
                 style={{
                   background: 'none',
@@ -181,7 +189,7 @@ export default function Navigation() {
           {navigationConfig.links.map((item, idx) => (
             <button
               key={item.targetId}
-              onClick={() => handleNavClick(item.targetId)}
+              onClick={() => handleNavClick(item.targetId, item.subpage)}
               className="font-serif-display"
               style={{
                 background: 'none',
