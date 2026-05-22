@@ -74,7 +74,7 @@ export default function Footer() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+              gridTemplateColumns: isMobile ? '1fr' : `repeat(${footerConfig.columns.length}, 1fr)`,
               gap: isMobile ? '36px' : '48px',
               paddingBottom: '60px',
               borderBottom: '1px solid rgba(255,255,255,0.06)',
