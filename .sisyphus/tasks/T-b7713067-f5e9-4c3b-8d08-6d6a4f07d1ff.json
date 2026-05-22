@@ -1,0 +1,9 @@
+{
+  "id": "T-b7713067-f5e9-4c3b-8d08-6d6a4f07d1ff",
+  "subject": "Fix all outstanding audit findings",
+  "description": "Homepage canonical, description trim, internal blog links, nav/footer links, footer off-site fix, SearchAction removal, contact form, hreflang, sameAs URLs",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1b130b72dffeRE4gflu97Wq92Q"
+}

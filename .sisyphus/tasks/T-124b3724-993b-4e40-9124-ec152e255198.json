@@ -1,0 +1,9 @@
+{
+  "id": "T-124b3724-993b-4e40-9124-ec152e255198",
+  "subject": "Add comprehensive technical SEO to HKEducation blog posts",
+  "description": "7-step task: extend BlogPost interface, extend SEO component, create blog-seo utils, update App.tsx SEO calls, add heading anchor IDs, verify build",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1b0db77ffffeeFXXCMx7qZ5vjR"
+}

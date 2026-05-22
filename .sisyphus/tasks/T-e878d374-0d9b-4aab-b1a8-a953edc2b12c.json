@@ -1,0 +1,9 @@
+{
+  "id": "T-e878d374-0d9b-4aab-b1a8-a953edc2b12c",
+  "subject": "Part 1: React Router Migration",
+  "description": "Install react-router-dom, refactor App.tsx from state-based to URL-based routing, update all components",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1b04b75c8ffeSP6KWyNkOq7lcp"
+}

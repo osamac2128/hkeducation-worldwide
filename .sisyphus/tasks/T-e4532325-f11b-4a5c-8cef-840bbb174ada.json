@@ -1,0 +1,9 @@
+{
+  "id": "T-e4532325-f11b-4a5c-8cef-840bbb174ada",
+  "subject": "Verify build passes",
+  "description": "Run npm run build and confirm zero errors",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1afa8d0c4ffeGSjEEgJxtIfbAQ"
+}

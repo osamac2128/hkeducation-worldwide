@@ -1,11 +1,8 @@
+import { Link } from 'react-router-dom';
 import { galleryConfig } from '../config';
 import { useIsMobile } from '../hooks/useMediaQuery';
 
-interface Props {
-  onSelect: (id: string) => void;
-}
-
-export default function ImmersiveGallery({ onSelect }: Props) {
+export default function ImmersiveGallery() {
   const textShadow = '0 2px 24px rgba(0,0,0,0.45)';
   const PROJECTS = galleryConfig.projects;
   const isMobile = useIsMobile();
@@ -61,16 +58,18 @@ export default function ImmersiveGallery({ onSelect }: Props) {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
-            gap: isMobile ? '32px' : '32px',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+            gap: isMobile ? '32px' : '28px',
           }}
         >
           {PROJECTS.map((project) => (
-            <div
+            <Link
               key={project.id}
-              onClick={() => onSelect(project.id)}
+              to={`/universities/${project.id}`}
               style={{
                 cursor: 'pointer',
+                textDecoration: 'none',
+                color: 'inherit',
               }}
             >
               {/* Image */}
@@ -87,6 +86,8 @@ export default function ImmersiveGallery({ onSelect }: Props) {
                 <img
                   src={project.image}
                   alt={`${project.title} — partner university in Malaysia for Pakistani students via HK Education Worldwide`}
+                  width="1600"
+                  height="1000"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -171,14 +172,13 @@ export default function ImmersiveGallery({ onSelect }: Props) {
                       letterSpacing: '0.1em',
                       color: 'rgba(255,255,255,0.4)',
                       marginTop: 4,
-                      textShadow,
                     }}
                   >
                     {project.year}
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

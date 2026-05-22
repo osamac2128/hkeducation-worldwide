@@ -1,12 +1,8 @@
+import { Link } from 'react-router-dom';
 import { unigeniConfig } from '../config';
 import { useIsMobile } from '../hooks/useMediaQuery';
 
-interface Props {
-  onBack: () => void;
-  onNavigateToScholarships: () => void;
-}
-
-export default function UnigeniPage({ onBack, onNavigateToScholarships }: Props) {
+export default function UnigeniPage() {
   const textShadow = '0 2px 24px rgba(0,0,0,0.45)';
   const isMobile = useIsMobile();
 
@@ -47,67 +43,11 @@ export default function UnigeniPage({ onBack, onNavigateToScholarships }: Props)
         color: '#ffffff',
       }}
     >
-      {/* Top bar */}
-      <div
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 20,
-          padding: isMobile ? '20px 5vw' : '28px 4vw',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          background: 'rgba(5,10,15,0.5)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <button
-          onClick={onBack}
-          className="font-sans-body"
-          style={{
-            background: 'transparent',
-            border: '1px solid rgba(255,255,255,0.4)',
-            color: '#ffffff',
-            fontSize: 11,
-            letterSpacing: '0.25em',
-            textTransform: 'uppercase',
-            padding: '10px 22px',
-            borderRadius: 30,
-            cursor: 'pointer',
-            textShadow,
-            transition: 'all 0.3s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.7)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)';
-          }}
-        >
-          ← Back
-        </button>
-        <div
-          className="font-sans-body"
-          style={{
-            fontSize: 10,
-            letterSpacing: '0.3em',
-            color: 'rgba(255,255,255,0.65)',
-            textTransform: 'uppercase',
-            textShadow,
-          }}
-        >
-          PARTNER TOOL
-        </div>
-      </div>
 
       {/* Hero */}
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '8vh 5vw 4vh' : '12vh 4vw 6vh',
           textAlign: 'center',
@@ -174,7 +114,7 @@ export default function UnigeniPage({ onBack, onNavigateToScholarships }: Props)
       {/* What is UniGeni? */}
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 6vh' : '0 4vw 8vh',
         }}
@@ -217,7 +157,7 @@ export default function UnigeniPage({ onBack, onNavigateToScholarships }: Props)
       {/* Feature Cards */}
       <div
         style={{
-          maxWidth: 900,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 8vh' : '0 4vw 12vh',
         }}
@@ -281,7 +221,7 @@ export default function UnigeniPage({ onBack, onNavigateToScholarships }: Props)
       {/* How It Helps */}
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 6vh' : '0 4vw 10vh',
         }}
@@ -347,7 +287,7 @@ export default function UnigeniPage({ onBack, onNavigateToScholarships }: Props)
       {/* Scholarship preview link */}
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 4vh' : '0 4vw 6vh',
           textAlign: 'center',
@@ -366,8 +306,8 @@ export default function UnigeniPage({ onBack, onNavigateToScholarships }: Props)
           }}
         >
           Looking for scholarships? Check out our dedicated{' '}
-          <button
-            onClick={onNavigateToScholarships}
+          <Link
+            to="/scholarships"
             className="font-sans-body"
             style={{
               background: 'none',
@@ -381,14 +321,14 @@ export default function UnigeniPage({ onBack, onNavigateToScholarships }: Props)
             }}
           >
             Scholarship Finder →
-          </button>
+          </Link>
         </p>
       </div>
 
       {/* CTA */}
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '4vh 5vw 6vh' : '6vh 4vw 10vh',
           textAlign: 'center',
@@ -419,7 +359,7 @@ export default function UnigeniPage({ onBack, onNavigateToScholarships }: Props)
       {/* Footer note */}
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 8vh' : '0 4vw 12vh',
           textAlign: 'center',

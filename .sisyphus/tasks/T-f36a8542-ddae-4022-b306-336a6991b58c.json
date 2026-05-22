@@ -1,0 +1,9 @@
+{
+  "id": "T-f36a8542-ddae-4022-b306-336a6991b58c",
+  "subject": "Add skip-to-content link in App.tsx",
+  "description": "Add visually-hidden skip link before Navigation, add id=\"main-content\" to Routes wrapper",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1afa8d0c4ffeGSjEEgJxtIfbAQ"
+}

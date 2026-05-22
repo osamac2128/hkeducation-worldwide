@@ -1,0 +1,9 @@
+{
+  "id": "T-6d14b146-cbd1-4eec-b064-df574d0d46ec",
+  "subject": "Focus management on contact form",
+  "description": "After form submission, move focus to success message using ref + useEffect",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1afa8d0c4ffeGSjEEgJxtIfbAQ"
+}

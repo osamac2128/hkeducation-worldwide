@@ -1,0 +1,133 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - link "Unigeni.ai home" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e8]:
+            - text: Unigeni
+            - generic [ref=e9]: ai
+        - navigation "Primary" [ref=e10]:
+          - link "Programs" [ref=e11] [cursor=pointer]:
+            - /url: /search
+          - link "Universities" [ref=e12] [cursor=pointer]:
+            - /url: /institutions
+          - link "Scholarships" [ref=e13] [cursor=pointer]:
+            - /url: /content/scholarships
+          - link "Study in UAE" [ref=e14] [cursor=pointer]:
+            - /url: /study-in-uae
+          - link "Study in Malaysia" [ref=e15] [cursor=pointer]:
+            - /url: /study-in-malaysia
+          - link "Guide" [ref=e16] [cursor=pointer]:
+            - /url: /guide
+        - generic [ref=e17]:
+          - link "Sign in" [ref=e18] [cursor=pointer]:
+            - /url: /login
+          - link "Start your application" [ref=e19] [cursor=pointer]:
+            - /url: /signup
+            - text: Start your application
+            - img [ref=e20]
+      - main [ref=e22]:
+        - generic [ref=e24]:
+          - generic [ref=e25]: Our mission
+          - heading "Making world-class education accessible for international students." [level=1] [ref=e26]
+          - paragraph [ref=e27]: Unigeni exists to help ambitious students from around the world find the right university — without the confusion, the cost, or the guesswork.
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - generic [ref=e31]: 240+
+            - generic [ref=e32]: Verified universities
+            - generic [ref=e33]: Across Malaysia & UAE
+          - generic [ref=e34]:
+            - generic [ref=e35]: 10,000+
+            - generic [ref=e36]: Students helped
+            - generic [ref=e37]: From 50+ countries
+          - generic [ref=e38]:
+            - generic [ref=e39]: $0
+            - generic [ref=e40]: Platform fee
+            - generic [ref=e41]: Free until you submit
+        - generic [ref=e43]:
+          - generic [ref=e44]: How Unigeni works
+          - heading "Three steps to your offer letter." [level=2] [ref=e45]
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - generic [ref=e48]: "01"
+              - heading "Search & compare" [level=3] [ref=e49]
+              - paragraph [ref=e50]: Browse 14,000+ programs across 240+ universities. Filter by eligibility, tuition, intake, scholarships you actually qualify for.
+            - generic [ref=e51]:
+              - generic [ref=e52]: "02"
+              - heading "Match with independent counselors" [level=3] [ref=e53]
+              - paragraph [ref=e54]: Talk to certified counselors — never an institution rep. They surface the best fit for your profile, not the highest commission.
+            - generic [ref=e55]:
+              - generic [ref=e56]: "03"
+              - heading "Apply and track in one place" [level=3] [ref=e57]
+              - paragraph [ref=e58]: Submit through Unigeni, track every deadline and status, accept your offer, and we hand you off to visa support.
+        - generic [ref=e60]:
+          - generic [ref=e61]: Independent by design
+          - heading "We work for students, not universities." [level=2] [ref=e62]
+          - paragraph [ref=e63]: Our counselors are certified education advisors with years of experience placing students in top universities across Malaysia and the UAE. We don't take recommendation fees from institutions — your fit comes first.
+          - generic [ref=e64]:
+            - link "Talk to a counselor" [ref=e65] [cursor=pointer]:
+              - /url: /contact
+              - text: Talk to a counselor
+              - img [ref=e66]
+            - link "Browse universities" [ref=e68] [cursor=pointer]:
+              - /url: /institutions
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - text: Unigeni
+              - generic [ref=e74]: ai
+            - generic [ref=e75]: A platform for students applying to universities across the UAE and Malaysia. Independent counselors. Verified institutions. One workflow.
+          - generic [ref=e76]:
+            - generic [ref=e77]: Product
+            - generic [ref=e78]:
+              - link "Find programs" [ref=e79] [cursor=pointer]:
+                - /url: /search
+              - link "Compare" [ref=e80] [cursor=pointer]:
+                - /url: /compare
+              - link "Eligibility" [ref=e81] [cursor=pointer]:
+                - /url: /eligibility
+              - link "Scholarships" [ref=e82] [cursor=pointer]:
+                - /url: /content/scholarships
+              - link "Events" [ref=e83] [cursor=pointer]:
+                - /url: /events
+          - generic [ref=e84]:
+            - generic [ref=e85]: Destinations
+            - generic [ref=e86]:
+              - link "United Arab Emirates" [ref=e87] [cursor=pointer]:
+                - /url: /study-in-uae
+              - link "Malaysia" [ref=e88] [cursor=pointer]:
+                - /url: /study-in-malaysia
+              - link "Tuition guide" [ref=e89] [cursor=pointer]:
+                - /url: /guide
+              - link "Visa guide" [ref=e90] [cursor=pointer]:
+                - /url: /guide
+          - generic [ref=e91]:
+            - generic [ref=e92]: Company
+            - generic [ref=e93]:
+              - link "About" [ref=e94] [cursor=pointer]:
+                - /url: /about
+              - link "Counselor network" [ref=e95] [cursor=pointer]:
+                - /url: /counselor
+              - link "Partner with us" [ref=e96] [cursor=pointer]:
+                - /url: /contact
+              - link "Careers" [ref=e97] [cursor=pointer]:
+                - /url: /contact
+              - link "Contact" [ref=e98] [cursor=pointer]:
+                - /url: /contact
+          - generic [ref=e99]:
+            - generic [ref=e100]: Legal
+            - generic [ref=e101]:
+              - link "Terms" [ref=e102] [cursor=pointer]:
+                - /url: /terms
+              - link "Privacy" [ref=e103] [cursor=pointer]:
+                - /url: /privacy
+              - link "Cookies" [ref=e104] [cursor=pointer]:
+                - /url: /privacy
+              - link "Trust" [ref=e105] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=e106]:
+          - generic [ref=e107]: © 2026 UNIGENI HOLDINGS · DUBAI / KUALA LUMPUR
+          - generic [ref=e108]: EN · العربية
+  - alert [ref=e109]

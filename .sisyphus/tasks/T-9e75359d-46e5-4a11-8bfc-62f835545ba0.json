@@ -1,0 +1,9 @@
+{
+  "id": "T-9e75359d-46e5-4a11-8bfc-62f835545ba0",
+  "subject": "Keyboard navigation improvements",
+  "description": "Escape key closes mobile menu, role=dialog + aria-modal on overlay",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1afa8d0c4ffeGSjEEgJxtIfbAQ"
+}

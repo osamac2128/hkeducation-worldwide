@@ -1,12 +1,12 @@
+import { Link } from 'react-router-dom';
 import type { BlogPost } from '../config';
 import { useIsMobile } from '../hooks/useMediaQuery';
 
 interface Props {
   post: BlogPost;
-  onBack: () => void;
 }
 
-export default function BlogPostPage({ post, onBack }: Props) {
+export default function BlogPostPage({ post }: Props) {
   const textShadow = '0 2px 24px rgba(0,0,0,0.45)';
   const isMobile = useIsMobile();
 
@@ -20,71 +20,11 @@ export default function BlogPostPage({ post, onBack }: Props) {
         color: '#ffffff',
       }}
     >
-      {/* Top bar */}
-      <div
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 20,
-          padding: isMobile ? '20px 5vw' : '28px 4vw',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          background: 'rgba(5,10,15,0.5)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <button
-          onClick={onBack}
-          className="font-sans-body"
-          style={{
-            background: 'transparent',
-            border: '1px solid rgba(255,255,255,0.4)',
-            color: '#ffffff',
-            fontSize: 11,
-            letterSpacing: '0.25em',
-            textTransform: 'uppercase',
-            padding: '10px 22px',
-            borderRadius: 30,
-            cursor: 'pointer',
-            textShadow,
-            transition: 'all 0.3s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.7)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)';
-          }}
-        >
-          ← All Posts
-        </button>
-        <div
-          className="font-sans-body"
-          style={{
-            fontSize: 9,
-            letterSpacing: '0.2em',
-            textTransform: 'uppercase',
-            color: '#30B0D0',
-            fontWeight: 500,
-            textShadow,
-            border: '1px solid rgba(48,176,208,0.3)',
-            padding: '6px 16px',
-            borderRadius: 30,
-          }}
-        >
-          {post.category}
-        </div>
-      </div>
 
       {/* Post header */}
       <div
         style={{
-          maxWidth: 680,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '8vh 5vw 2vh' : '10vh 4vw 2vh',
         }}
@@ -150,7 +90,7 @@ export default function BlogPostPage({ post, onBack }: Props) {
       {/* Tags row */}
       <div
         style={{
-          maxWidth: 680,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 4vh' : '0 4vw 4vh',
           display: 'flex',
@@ -181,7 +121,7 @@ export default function BlogPostPage({ post, onBack }: Props) {
       {/* Content body */}
       <div
         style={{
-          maxWidth: 680,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 6vh' : '0 4vw 8vh',
         }}
@@ -208,9 +148,14 @@ export default function BlogPostPage({ post, onBack }: Props) {
             }
 
             if (section.type === 'heading') {
+              const headingSlug = section.content
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '');
               return (
                 <h2
                   key={idx}
+                  id={headingSlug}
                   className="font-serif-display"
                   style={{
                     fontSize: isMobile ? '18px' : '22px',
@@ -339,15 +284,15 @@ export default function BlogPostPage({ post, onBack }: Props) {
       {/* Bottom navigation */}
       <div
         style={{
-          maxWidth: 680,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 4vh' : '0 4vw 4vh',
           borderTop: '1px solid rgba(255,255,255,0.08)',
           paddingTop: 24,
         }}
       >
-        <button
-          onClick={onBack}
+        <Link
+          to="/blog"
           className="font-sans-body"
           style={{
             background: 'transparent',
@@ -356,18 +301,19 @@ export default function BlogPostPage({ post, onBack }: Props) {
             fontSize: 14,
             cursor: 'pointer',
             padding: 0,
-            textShadow,
+            textShadow: '0 2px 24px rgba(0,0,0,0.45)',
             letterSpacing: '0.02em',
+            textDecoration: 'none',
           }}
         >
           ← Back to All Posts
-        </button>
+        </Link>
       </div>
 
       {/* Footer disclaimer */}
       <div
         style={{
-          maxWidth: 680,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 10vh' : '0 4vw 14vh',
           textAlign: 'center',

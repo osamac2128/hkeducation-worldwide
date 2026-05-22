@@ -1,12 +1,8 @@
+import { Link } from 'react-router-dom';
 import { unigeniConfig } from '../config';
 import { useIsMobile } from '../hooks/useMediaQuery';
 
-interface Props {
-  onBack: () => void;
-  onNavigateToUnigeni: () => void;
-}
-
-export default function ScholarshipGuidePage({ onBack, onNavigateToUnigeni }: Props) {
+export default function ScholarshipGuidePage() {
   const textShadow = '0 2px 24px rgba(0,0,0,0.45)';
   const isMobile = useIsMobile();
 
@@ -54,84 +50,11 @@ export default function ScholarshipGuidePage({ onBack, onNavigateToUnigeni }: Pr
         color: '#ffffff',
       }}
     >
-      {/* Top bar */}
-      <div
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 20,
-          padding: isMobile ? '20px 5vw' : '28px 4vw',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          background: 'rgba(5,10,15,0.5)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <button
-          onClick={onBack}
-          className="font-sans-body"
-          style={{
-            background: 'transparent',
-            border: '1px solid rgba(255,255,255,0.4)',
-            color: '#ffffff',
-            fontSize: 11,
-            letterSpacing: '0.25em',
-            textTransform: 'uppercase',
-            padding: '10px 22px',
-            borderRadius: 30,
-            cursor: 'pointer',
-            textShadow,
-            transition: 'all 0.3s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.7)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)';
-          }}
-        >
-          ← Back
-        </button>
-        <button
-          onClick={onNavigateToUnigeni}
-          className="font-sans-body"
-          style={{
-            background: 'transparent',
-            border: '1px solid rgba(255,255,255,0.25)',
-            color: 'rgba(255,255,255,0.7)',
-            fontSize: 11,
-            letterSpacing: '0.2em',
-            textTransform: 'uppercase',
-            padding: '10px 22px',
-            borderRadius: 30,
-            cursor: 'pointer',
-            textShadow,
-            transition: 'all 0.3s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
-            e.currentTarget.style.color = '#ffffff';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)';
-          }}
-        >
-          View All Tools →
-        </button>
-      </div>
 
       {/* Hero */}
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '8vh 5vw 4vh' : '12vh 4vw 6vh',
           textAlign: 'center',
@@ -186,7 +109,7 @@ export default function ScholarshipGuidePage({ onBack, onNavigateToUnigeni }: Pr
       {/* Scholarship Feature Cards */}
       <div
         style={{
-          maxWidth: 900,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 8vh' : '0 4vw 12vh',
         }}
@@ -249,7 +172,7 @@ export default function ScholarshipGuidePage({ onBack, onNavigateToUnigeni }: Pr
       {/* Stats Row */}
       <div
         style={{
-          maxWidth: 900,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 8vh' : '0 4vw 12vh',
         }}
@@ -302,7 +225,7 @@ export default function ScholarshipGuidePage({ onBack, onNavigateToUnigeni }: Pr
       {/* CTA */}
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '4vh 5vw 6vh' : '6vh 4vw 10vh',
           textAlign: 'center',
@@ -330,10 +253,51 @@ export default function ScholarshipGuidePage({ onBack, onNavigateToUnigeni }: Pr
         </a>
       </div>
 
+      {/* Study tools link */}
+      <div
+        style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: isMobile ? '0 5vw 4vh' : '0 4vw 4vh',
+          textAlign: 'center',
+        }}
+      >
+        <p
+          className="font-sans-body"
+          style={{
+            fontSize: isMobile ? '13px' : '14px',
+            lineHeight: 1.7,
+            fontWeight: 300,
+            color: 'rgba(255,255,255,0.6)',
+            margin: 0,
+            marginBottom: 20,
+            textShadow: '0 2px 24px rgba(0,0,0,0.45)',
+          }}
+        >
+          Want to explore more tools?{' '}
+          <Link
+            to="/study-tools"
+            className="font-sans-body"
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#30B0D0',
+              fontSize: 'inherit',
+              fontWeight: 400,
+              textDecoration: 'underline',
+              cursor: 'pointer',
+              padding: 0,
+            }}
+          >
+            View All Study Tools →
+          </Link>
+        </p>
+      </div>
+
       {/* Footer note */}
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 8vh' : '0 4vw 12vh',
           textAlign: 'center',

@@ -12,4 +12,15 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'three-vendor': ['three'],
+          'gsap-vendor': ['gsap', 'gsap/ScrollTrigger'],
+          'router': ['react-router-dom'],
+        },
+      },
+    },
+  },
 });

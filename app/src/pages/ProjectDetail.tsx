@@ -1,15 +1,16 @@
 import type { ProjectData } from '../config';
 import { projectDetailConfig } from '../config';
+import { useNavigate } from 'react-router-dom';
 import { useIsMobile } from '../hooks/useMediaQuery';
 
 interface Props {
   project: ProjectData;
-  onBack: () => void;
 }
 
-export default function ProjectDetail({ project, onBack }: Props) {
+export default function ProjectDetail({ project }: Props) {
   const textShadow = '0 2px 24px rgba(0,0,0,0.45)';
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
 
   return (
     <div
@@ -38,7 +39,7 @@ export default function ProjectDetail({ project, onBack }: Props) {
         }}
       >
         <button
-          onClick={onBack}
+          onClick={() => navigate(-1)}
           className="font-sans-body"
           style={{
             background: 'transparent',
@@ -210,7 +211,9 @@ export default function ProjectDetail({ project, onBack }: Props) {
           >
             <img
               src={project.image}
-              alt={project.title}
+              alt={`${project.title} — university detail for Pakistani students via HK Education Worldwide`}
+              width="1024"
+              height="1365"
               style={{
                 width: '100%',
                 height: '100%',

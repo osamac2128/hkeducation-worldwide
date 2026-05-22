@@ -1,16 +1,12 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { blogConfig } from '../config';
 import type { BlogPost } from '../config';
 import { useIsMobile } from '../hooks/useMediaQuery';
 
-interface Props {
-  onBack: () => void;
-  onSelectPost: (postId: string) => void;
-}
-
 const ALL_CATEGORIES = ['All', 'GUIDES', 'SCHOLARSHIPS', 'DESTINATIONS', 'RESOURCES'];
 
-export default function BlogListPage({ onBack, onSelectPost }: Props) {
+export default function BlogListPage() {
   const textShadow = '0 2px 24px rgba(0,0,0,0.45)';
   const isMobile = useIsMobile();
   const [activeCategory, setActiveCategory] = useState('All');
@@ -29,67 +25,11 @@ export default function BlogListPage({ onBack, onSelectPost }: Props) {
         color: '#ffffff',
       }}
     >
-      {/* Top bar */}
-      <div
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 20,
-          padding: isMobile ? '20px 5vw' : '28px 4vw',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          background: 'rgba(5,10,15,0.5)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
-        }}
-      >
-        <button
-          onClick={onBack}
-          className="font-sans-body"
-          style={{
-            background: 'transparent',
-            border: '1px solid rgba(255,255,255,0.4)',
-            color: '#ffffff',
-            fontSize: 11,
-            letterSpacing: '0.25em',
-            textTransform: 'uppercase',
-            padding: '10px 22px',
-            borderRadius: 30,
-            cursor: 'pointer',
-            textShadow,
-            transition: 'all 0.3s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.7)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)';
-          }}
-        >
-          ← Back
-        </button>
-        <div
-          className="font-sans-body"
-          style={{
-            fontSize: 10,
-            letterSpacing: '0.3em',
-            color: 'rgba(255,255,255,0.65)',
-            textTransform: 'uppercase',
-            textShadow,
-          }}
-        >
-          BLOG
-        </div>
-      </div>
 
       {/* Header */}
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '8vh 5vw 4vh' : '12vh 4vw 4vh',
           textAlign: 'center',
@@ -142,7 +82,7 @@ export default function BlogListPage({ onBack, onSelectPost }: Props) {
       {/* Category filter pills */}
       <div
         style={{
-          maxWidth: 900,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 4vh' : '0 4vw 4vh',
           display: 'flex',
@@ -181,7 +121,7 @@ export default function BlogListPage({ onBack, onSelectPost }: Props) {
       {/* Post cards grid */}
       <div
         style={{
-          maxWidth: 900,
+          maxWidth: '1200px',
           margin: '0 auto',
           padding: isMobile ? '0 5vw 8vh' : '0 4vw 12vh',
         }}
@@ -194,9 +134,9 @@ export default function BlogListPage({ onBack, onSelectPost }: Props) {
           }}
         >
           {filteredPosts.map((post) => (
-            <div
+            <Link
               key={post.id}
-              onClick={() => onSelectPost(post.id)}
+              to={`/blog/${post.id}`}
               style={{
                 border: '1px solid rgba(255,255,255,0.06)',
                 borderRadius: 12,
@@ -207,6 +147,8 @@ export default function BlogListPage({ onBack, onSelectPost }: Props) {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 12,
+                textDecoration: 'none',
+                color: 'inherit',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
@@ -297,7 +239,7 @@ export default function BlogListPage({ onBack, onSelectPost }: Props) {
                   Read More →
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

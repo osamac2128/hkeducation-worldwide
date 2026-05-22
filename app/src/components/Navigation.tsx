@@ -1,16 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { navigationConfig } from '../config';
 import { useIsMobile } from '../hooks/useMediaQuery';
 
-interface Props {
-  onSubpageClick?: (pageId: string) => void;
-}
-
-export default function Navigation({ onSubpageClick }: Props) {
+export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
@@ -37,21 +36,130 @@ export default function Navigation({ onSubpageClick }: Props) {
     };
   }, [menuOpen]);
 
-  const handleNavClick = (id: string, subpage?: string) => {
+  // Close menu on Escape key
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [menuOpen]);
+
+  const handleNavClick = (item: { targetId: string; subpage?: string }) => {
     setMenuOpen(false);
-    if (subpage && onSubpageClick) {
-      onSubpageClick(subpage);
+
+    if (item.subpage) {
+      const routeMap: Record<string, string> = {
+        unigeni: '/study-tools',
+        blog: '/blog',
+        scholarships: '/scholarships',
+      };
+      const path = routeMap[item.subpage];
+      if (path) {
+        navigate(path);
+      }
       return;
     }
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+
+    // Section scroll — if on homepage, scroll to section; otherwise navigate with hash
+    if (location.pathname === '/') {
+      const el = document.getElementById(item.targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(`/#${item.targetId}`);
     }
   };
 
   if (!navigationConfig.brandMark && navigationConfig.links.length === 0) {
     return null;
   }
+
+  const renderNavLink = (item: { targetId: string; subpage?: string; label: string }, idx?: number) => {
+    if (item.subpage) {
+      const routeMap: Record<string, string> = {
+        unigeni: '/study-tools',
+        blog: '/blog',
+        scholarships: '/scholarships',
+      };
+      const path = routeMap[item.subpage];
+      if (path) {
+        return (
+          <Link
+            key={item.targetId}
+            to={path}
+            onClick={() => setMenuOpen(false)}
+            className="font-sans-body"
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#FFFFFF',
+              opacity: 0.6,
+              fontSize: '14px',
+              letterSpacing: '0.08em',
+              cursor: 'pointer',
+              transition: 'opacity 0.4s ease',
+              padding: 0,
+              position: 'relative',
+              textDecoration: 'none',
+              ...(idx !== undefined ? {
+                opacity: menuOpen ? 1 : 0,
+                transform: menuOpen ? 'translateY(0)' : 'translateY(12px)',
+                transition: `opacity 0.4s ease ${idx * 0.08}s, transform 0.4s ease ${idx * 0.08}s`,
+                fontSize: '28px',
+                fontWeight: 300,
+                letterSpacing: '0.1em',
+                fontFamily: "'Noto Serif SC', 'Georgia', serif",
+              } : {}),
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.opacity = '1';
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.opacity = '0.6';
+            }}
+          >
+            {item.label}
+          </Link>
+        );
+      }
+    }
+
+    return (
+      <button
+        key={item.targetId}
+        onClick={() => handleNavClick(item)}
+        className={idx !== undefined ? 'font-serif-display' : 'font-sans-body'}
+        style={{
+          background: 'none',
+          border: 'none',
+          color: '#FFFFFF',
+          opacity: idx !== undefined ? (menuOpen ? 1 : 0) : 0.6,
+          fontSize: idx !== undefined ? '28px' : '14px',
+          fontWeight: idx !== undefined ? 300 : undefined,
+          letterSpacing: idx !== undefined ? '0.1em' : '0.08em',
+          cursor: 'pointer',
+          transition: idx !== undefined
+            ? `opacity 0.4s ease ${idx * 0.08}s, transform 0.4s ease ${idx * 0.08}s`
+            : 'opacity 0.4s ease',
+          padding: 0,
+          position: 'relative',
+          transform: idx !== undefined ? (menuOpen ? 'translateY(0)' : 'translateY(12px)') : undefined,
+        }}
+        onMouseEnter={(e) => {
+          (e.target as HTMLElement).style.opacity = '1';
+        }}
+        onMouseLeave={(e) => {
+          (e.target as HTMLElement).style.opacity = '0.6';
+        }}
+      >
+        {item.label}
+      </button>
+    );
+  };
 
   return (
     <>
@@ -74,22 +182,25 @@ export default function Navigation({ onSubpageClick }: Props) {
           boxShadow: scrolled ? '0 1px 0 rgba(255,255,255,0.06)' : 'none',
         }}
       >
-        <div
+        <Link
+          to="/"
           className="font-serif-display"
           style={{
             fontSize: '18px',
             fontWeight: 400,
             letterSpacing: '0.15em',
             color: '#FFFFFF',
+            textDecoration: 'none',
           }}
         >
           {navigationConfig.brandMark}
-        </div>
+        </Link>
 
         {isMobile ? (
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
             style={{
               background: 'none',
               border: 'none',
@@ -134,33 +245,7 @@ export default function Navigation({ onSubpageClick }: Props) {
           </button>
         ) : (
           <div style={{ display: 'flex', gap: '36px', alignItems: 'center' }}>
-            {navigationConfig.links.map((item) => (
-              <button
-                key={item.targetId}
-                onClick={() => handleNavClick(item.targetId, item.subpage)}
-                className="font-sans-body"
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: '#FFFFFF',
-                  opacity: 0.6,
-                  fontSize: '14px',
-                  letterSpacing: '0.08em',
-                  cursor: 'pointer',
-                  transition: 'opacity 0.4s ease',
-                  padding: 0,
-                  position: 'relative',
-                }}
-                onMouseEnter={(e) => {
-                  (e.target as HTMLElement).style.opacity = '1';
-                }}
-                onMouseLeave={(e) => {
-                  (e.target as HTMLElement).style.opacity = '0.6';
-                }}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navigationConfig.links.map((item) => renderNavLink(item))}
           </div>
         )}
       </nav>
@@ -168,6 +253,9 @@ export default function Navigation({ onSubpageClick }: Props) {
       {/* Mobile fullscreen menu */}
       {isMobile && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
           style={{
             position: 'fixed',
             inset: 0,
@@ -186,27 +274,7 @@ export default function Navigation({ onSubpageClick }: Props) {
             pointerEvents: menuOpen ? 'auto' : 'none',
           }}
         >
-          {navigationConfig.links.map((item, idx) => (
-            <button
-              key={item.targetId}
-              onClick={() => handleNavClick(item.targetId, item.subpage)}
-              className="font-serif-display"
-              style={{
-                background: 'none',
-                border: 'none',
-                color: '#FFFFFF',
-                fontSize: '28px',
-                fontWeight: 300,
-                letterSpacing: '0.1em',
-                cursor: 'pointer',
-                opacity: menuOpen ? 1 : 0,
-                transform: menuOpen ? 'translateY(0)' : 'translateY(12px)',
-                transition: `opacity 0.4s ease ${idx * 0.08}s, transform 0.4s ease ${idx * 0.08}s`,
-              }}
-            >
-              {item.label}
-            </button>
-          ))}
+          {navigationConfig.links.map((item, idx) => renderNavLink(item, idx))}
         </div>
       )}
     </>

@@ -1,0 +1,9 @@
+{
+  "id": "T-60d10708-8dcd-4144-b93b-5d226506f089",
+  "subject": "Write and add 11 SEO blog posts to HKEducation config",
+  "description": "Read config.ts, write Node.js script to append 11 new blog post objects to blogConfig.posts, run build to verify, clean up script.",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1afa8d0e1ffeZRircEC5kEUIXv"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "T-84a3040b-5767-44a5-899f-1c8e7d94e445",
+  "subject": "P0: Emergency hotfixes (phone, favicon, social URLs, robots.txt)",
+  "description": "Fix phone number mismatch in structured data, create proper favicon, verify social URLs, enhance robots.txt",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1b130b72dffeRE4gflu97Wq92Q"
+}

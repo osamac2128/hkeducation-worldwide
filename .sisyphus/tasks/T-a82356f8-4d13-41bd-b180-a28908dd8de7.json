@@ -1,0 +1,9 @@
+{
+  "id": "T-a82356f8-4d13-41bd-b180-a28908dd8de7",
+  "subject": "Make blog/subpage layouts responsive - change maxWidth to 1200px",
+  "description": "Replace narrow fixed maxWidth values (680/720/900) with '1200px' in 4 page files to match main site pattern. Then verify build passes.",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1b0cdedf9ffewnOO2i2otabYsW"
+}

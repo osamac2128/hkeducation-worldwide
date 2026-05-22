@@ -1,0 +1,9 @@
+{
+  "id": "T-ae01b67d-10eb-40df-a99b-4685a232c884",
+  "subject": "Add Unigeni subpages to HKEducation site",
+  "description": "Create 2 subpages linking to unigeni.ai with guides about what it does and how it helps students. Update navigation, footer, config, and App.tsx routing.",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "threadID": "ses_1b130b72dffeRE4gflu97Wq92Q"
+}

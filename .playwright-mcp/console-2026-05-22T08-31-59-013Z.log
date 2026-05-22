@@ -1,0 +1,3 @@
+[    3801ms] [LOG] {"namespace":"monitoring","level":"info","event":"web_vitals.metric","timestamp":"2026-05-22T08:32:02.812Z","id":"v[REDACTED_PHONE]","name":"TTFB","value":1918.2} @ https://www.unigeni.ai/_next/static/chunks/app/layout-9a6865186e4121d2.js:0
+[    4083ms] [INFO] Banner not shown: beforeinstallpromptevent.preventDefault() called. The page must call beforeinstallpromptevent.prompt() to show the banner. @ https://www.unigeni.ai/:0
+[    4190ms] [LOG] {"namespace":"monitoring","level":"info","event":"web_vitals.metric","timestamp":"2026-05-22T08:32:03.202Z","id":"v[REDACTED_PHONE]","name":"FCP","value":4108} @ https://www.unigeni.ai/_next/static/chunks/app/layout-9a6865186e4121d2.js:0

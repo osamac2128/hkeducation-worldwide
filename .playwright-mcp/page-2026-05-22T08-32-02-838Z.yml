@@ -1,0 +1,338 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - link "Unigeni.ai home" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e8]:
+            - text: Unigeni
+            - generic [ref=e9]: ai
+        - navigation "Primary" [ref=e10]:
+          - link "Programs" [ref=e11] [cursor=pointer]:
+            - /url: /search
+          - link "Universities" [ref=e12] [cursor=pointer]:
+            - /url: /institutions
+          - link "Scholarships" [ref=e13] [cursor=pointer]:
+            - /url: /content/scholarships
+          - link "Study in UAE" [ref=e14] [cursor=pointer]:
+            - /url: /study-in-uae
+          - link "Study in Malaysia" [ref=e15] [cursor=pointer]:
+            - /url: /study-in-malaysia
+          - link "Guide" [ref=e16] [cursor=pointer]:
+            - /url: /guide
+        - generic [ref=e17]:
+          - link "Sign in" [ref=e18] [cursor=pointer]:
+            - /url: /login
+          - link "Start your application" [ref=e19] [cursor=pointer]:
+            - /url: /signup
+            - text: Start your application
+            - img [ref=e20]
+      - main [ref=e22]:
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - generic [ref=e26]: Issue 04 · International admissions · 2026 intake
+            - heading "The shortest path from your transcript to an offer letter abroad." [level=1] [ref=e27]
+            - paragraph [ref=e28]: Unigeni helps international students apply to 105+ verified universities in the UAE and Malaysia. One profile, every application, every deadline. Free to start.
+            - generic [ref=e29]:
+              - textbox "Search programs" [ref=e30]:
+                - /placeholder: Search programs, fields, universities…
+              - button "Search" [ref=e31] [cursor=pointer]:
+                - img [ref=e32]
+                - text: Search
+            - generic [ref=e35]:
+              - link "Start your application" [ref=e36] [cursor=pointer]:
+                - /url: /signup
+                - text: Start your application
+                - img [ref=e37]
+              - link "Browse 2,305+ programs" [ref=e39] [cursor=pointer]:
+                - /url: /search
+            - generic [ref=e40]:
+              - generic [ref=e41]:
+                - generic [ref=e42]: AR
+                - generic [ref=e43]: NM
+                - generic [ref=e44]: JK
+                - generic [ref=e45]: BS
+              - generic [ref=e46]:
+                - strong [ref=e47]: 4,200+ students
+                - text: applied through Unigeni last intake.
+                - generic [ref=e48]: "Average time to first offer: 23 days."
+          - generic [ref=e49]:
+            - link "AP Asia Pacific University of Technology & Innovation Kuala Lumpur Top international programs Malaysia Open intake":
+              - /url: /institutions/asia-pacific-university
+              - generic [ref=e50] [cursor=pointer]:
+                - generic [ref=e51]:
+                  - generic [ref=e52]: AP
+                  - generic [ref=e53]:
+                    - generic [ref=e54]: Asia Pacific University of Technology & Innovation
+                    - generic [ref=e55]: Kuala Lumpur
+                - generic [ref=e56]: Top international programs
+                - generic [ref=e57]:
+                  - generic [ref=e58]: Malaysia
+                  - generic [ref=e59]: Open intake
+            - link "AD Abu Dhabi University Abu Dhabi Top international programs UAE Open intake":
+              - /url: /institutions/abu-dhabi-university
+              - generic [ref=e60] [cursor=pointer]:
+                - generic [ref=e61]:
+                  - generic [ref=e62]: AD
+                  - generic [ref=e63]:
+                    - generic [ref=e64]: Abu Dhabi University
+                    - generic [ref=e65]: Abu Dhabi
+                - generic [ref=e66]: Top international programs
+                - generic [ref=e67]:
+                  - generic [ref=e68]: UAE
+                  - generic [ref=e69]: Open intake
+        - separator [ref=e70]
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: 105+
+            - generic [ref=e75]: Verified universities
+          - generic [ref=e76]:
+            - generic [ref=e77]: 2,305
+            - generic [ref=e78]: Programs in catalogue
+          - generic [ref=e79]:
+            - generic [ref=e80]: "120"
+            - generic [ref=e81]: Active scholarships
+          - generic [ref=e82]:
+            - generic [ref=e83]: $0
+            - generic [ref=e84]: Platform fee for students
+        - separator [ref=e85]
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - generic [ref=e89]:
+              - generic [ref=e90]: Verified network
+              - heading "Universities accepting applications now." [level=2] [ref=e91]
+            - link "See all 105" [ref=e92] [cursor=pointer]:
+              - /url: /institutions
+              - text: See all 105
+              - img [ref=e93]
+          - generic [ref=e95]:
+            - link "Asia Pacific University of Technology & Innovation · campus AP Asia Pacific University of Technology & Innovation Kuala Lumpur Malaysia university Open" [ref=e96] [cursor=pointer]:
+              - /url: /institutions/asia-pacific-university
+              - generic [ref=e97]:
+                - generic [ref=e98]: Asia Pacific University of Technology & Innovation · campus
+                - generic [ref=e99]:
+                  - generic [ref=e100]: AP
+                  - generic [ref=e101]:
+                    - generic [ref=e102]: Asia Pacific University of Technology & Innovation
+                    - generic [ref=e103]: Kuala Lumpur
+                - generic [ref=e104]:
+                  - generic [ref=e105]: Malaysia
+                  - generic [ref=e106]: university
+                  - generic [ref=e107]: Open
+            - link "Abu Dhabi University · campus AD Abu Dhabi University Abu Dhabi UAE university Open" [ref=e108] [cursor=pointer]:
+              - /url: /institutions/abu-dhabi-university
+              - generic [ref=e109]:
+                - generic [ref=e110]: Abu Dhabi University · campus
+                - generic [ref=e111]:
+                  - generic [ref=e112]: AD
+                  - generic [ref=e113]:
+                    - generic [ref=e114]: Abu Dhabi University
+                    - generic [ref=e115]: Abu Dhabi
+                - generic [ref=e116]:
+                  - generic [ref=e117]: UAE
+                  - generic [ref=e118]: university
+                  - generic [ref=e119]: Open
+            - link "Asia School of Business · campus AS Asia School of Business Kuala Lumpur Malaysia university Open" [ref=e120] [cursor=pointer]:
+              - /url: /institutions/asia-school-of-business
+              - generic [ref=e121]:
+                - generic [ref=e122]: Asia School of Business · campus
+                - generic [ref=e123]:
+                  - generic [ref=e124]: AS
+                  - generic [ref=e125]:
+                    - generic [ref=e126]: Asia School of Business
+                    - generic [ref=e127]: Kuala Lumpur
+                - generic [ref=e128]:
+                  - generic [ref=e129]: Malaysia
+                  - generic [ref=e130]: university
+                  - generic [ref=e131]: Open
+            - link "Ajman University · campus AU Ajman University Ajman UAE university Open" [ref=e132] [cursor=pointer]:
+              - /url: /institutions/ajman-university
+              - generic [ref=e133]:
+                - generic [ref=e134]: Ajman University · campus
+                - generic [ref=e135]:
+                  - generic [ref=e136]: AU
+                  - generic [ref=e137]:
+                    - generic [ref=e138]: Ajman University
+                    - generic [ref=e139]: Ajman
+                - generic [ref=e140]:
+                  - generic [ref=e141]: UAE
+                  - generic [ref=e142]: university
+                  - generic [ref=e143]: Open
+            - link "Curtin University Malaysia · campus CU Curtin University Malaysia Miri Malaysia university Open" [ref=e144] [cursor=pointer]:
+              - /url: /institutions/curtin-university-malaysia
+              - generic [ref=e145]:
+                - generic [ref=e146]: Curtin University Malaysia · campus
+                - generic [ref=e147]:
+                  - generic [ref=e148]: CU
+                  - generic [ref=e149]:
+                    - generic [ref=e150]: Curtin University Malaysia
+                    - generic [ref=e151]: Miri
+                - generic [ref=e152]:
+                  - generic [ref=e153]: Malaysia
+                  - generic [ref=e154]: university
+                  - generic [ref=e155]: Open
+            - link "Al Ain University · campus AA Al Ain University Al Ain UAE university Open" [ref=e156] [cursor=pointer]:
+              - /url: /institutions/al-ain-university
+              - generic [ref=e157]:
+                - generic [ref=e158]: Al Ain University · campus
+                - generic [ref=e159]:
+                  - generic [ref=e160]: AA
+                  - generic [ref=e161]:
+                    - generic [ref=e162]: Al Ain University
+                    - generic [ref=e163]: Al Ain
+                - generic [ref=e164]:
+                  - generic [ref=e165]: UAE
+                  - generic [ref=e166]: university
+                  - generic [ref=e167]: Open
+        - generic [ref=e169]:
+          - generic [ref=e170]: Two destinations, one workflow
+          - heading "Apply to the UAE and Malaysia from the same dashboard." [level=2] [ref=e171]
+          - generic [ref=e172]:
+            - generic [ref=e173]:
+              - generic [ref=e174]: UAE
+              - heading "Study in the UAE" [level=3] [ref=e175]
+              - paragraph [ref=e176]: Top-tier engineering, business, and architecture programs in Dubai, Sharjah, and Abu Dhabi. English-medium, generous merit scholarships.
+              - generic [ref=e177]:
+                - generic [ref=e178]:
+                  - generic [ref=e179]: "203"
+                  - generic [ref=e180]: Programs across UAE
+                - link "Explore" [ref=e181] [cursor=pointer]:
+                  - /url: /study-in-uae
+                  - text: Explore
+                  - img [ref=e182]
+            - generic [ref=e184]:
+              - generic [ref=e185]: Malaysia
+              - heading "Study in Malaysia" [level=3] [ref=e186]
+              - paragraph [ref=e187]: Affordable, internationally-accredited programs in Kuala Lumpur and beyond. Pathway programs, dual-degree options, fast visa.
+              - generic [ref=e188]:
+                - generic [ref=e189]:
+                  - generic [ref=e190]: 2,102
+                  - generic [ref=e191]: Programs across Malaysia
+                - link "Explore" [ref=e192] [cursor=pointer]:
+                  - /url: /study-in-malaysia
+                  - text: Explore
+                  - img [ref=e193]
+        - generic [ref=e196]:
+          - generic [ref=e197]: TESTIMONIAL · 1 OF 8
+          - blockquote [ref=e198]: “I sent five applications in one weekend. Two months later I had three offers. The deadline tracker alone was worth it.”
+          - generic [ref=e199]:
+            - generic [ref=e200]: NM
+            - generic [ref=e201]:
+              - generic [ref=e202]: Noor M., Karachi → Kuala Lumpur
+              - generic [ref=e203]: BSc Computer Science · Monash Malaysia
+        - generic [ref=e205]:
+          - generic [ref=e206]: How it works
+          - heading "One profile. Every application. Every deadline." [level=2] [ref=e207]
+          - generic [ref=e208]:
+            - generic [ref=e209]:
+              - generic [ref=e210]: STEP 01
+              - heading "Build your profile once" [level=3] [ref=e211]
+              - paragraph [ref=e212]: Upload transcripts, language scores, and a personal statement. We reuse them across every application.
+            - generic [ref=e213]:
+              - generic [ref=e214]: STEP 02
+              - heading "Match to verified programs" [level=3] [ref=e215]
+              - paragraph [ref=e216]: Browse 14,000+ programs filtered by eligibility, tuition, intake, and scholarships you actually qualify for.
+            - generic [ref=e217]:
+              - generic [ref=e218]: STEP 03
+              - heading "Apply and track in one place" [level=3] [ref=e219]
+              - paragraph [ref=e220]: Submit through Unigeni, track every status, talk to admissions, and accept your offer — all in one dashboard.
+        - generic [ref=e222]:
+          - generic [ref=e223]:
+            - generic [ref=e224]:
+              - generic [ref=e225]: From the journal
+              - heading "Reading for international applicants." [level=2] [ref=e226]
+            - link "All articles" [ref=e227] [cursor=pointer]:
+              - /url: /content
+              - text: All articles
+              - img [ref=e228]
+          - generic [ref=e230]:
+            - link "Top 10 Affordable Universities in Malaysia for 2026 6 min read Top 10 Affordable Universities in Malaysia for 2026 A curated list of Malaysia's most affordable universities with tuition, intake dates, and scholarship highlights." [ref=e231] [cursor=pointer]:
+              - /url: /content/top-10-affordable-universities-malaysia-2026
+              - generic [ref=e232]:
+                - generic [ref=e233]: Top 10 Affordable Universities in Malaysia for 2026
+                - generic [ref=e234]: 6 min read
+                - heading "Top 10 Affordable Universities in Malaysia for 2026" [level=3] [ref=e235]
+                - paragraph [ref=e236]: A curated list of Malaysia's most affordable universities with tuition, intake dates, and scholarship highlights.
+            - link "How to Secure a Full Scholarship in the UAE 7 min read How to Secure a Full Scholarship in the UAE The UAE has a growing pool of full-ride scholarships. Here's how international applicants win them." [ref=e237] [cursor=pointer]:
+              - /url: /content/secure-full-scholarship-uae
+              - generic [ref=e238]:
+                - generic [ref=e239]: How to Secure a Full Scholarship in the UAE
+                - generic [ref=e240]: 7 min read
+                - heading "How to Secure a Full Scholarship in the UAE" [level=3] [ref=e241]
+                - paragraph [ref=e242]: The UAE has a growing pool of full-ride scholarships. Here's how international applicants win them.
+            - link "Student Visa Requirements for International Students 5 min read Student Visa Requirements for International Students A clear breakdown of student visa requirements for Malaysia and the UAE, with document checklists and timelines." [ref=e243] [cursor=pointer]:
+              - /url: /content/student-visa-requirements-international-students
+              - generic [ref=e244]:
+                - generic [ref=e245]: Student Visa Requirements for International Students
+                - generic [ref=e246]: 5 min read
+                - heading "Student Visa Requirements for International Students" [level=3] [ref=e247]
+                - paragraph [ref=e248]: A clear breakdown of student visa requirements for Malaysia and the UAE, with document checklists and timelines.
+        - generic [ref=e250]:
+          - heading "Start your application today." [level=2] [ref=e251]
+          - paragraph [ref=e252]: Free profile. Free counselor matching. Free until you submit a paid application directly to a university.
+          - generic [ref=e253]:
+            - link "Create your profile" [ref=e254] [cursor=pointer]:
+              - /url: /signup
+              - text: Create your profile
+              - img [ref=e255]
+            - link "Browse programs" [ref=e257] [cursor=pointer]:
+              - /url: /search
+      - generic [ref=e259]:
+        - generic [ref=e260]:
+          - generic [ref=e261]:
+            - generic [ref=e262]:
+              - text: Unigeni
+              - generic [ref=e263]: ai
+            - generic [ref=e264]: A platform for students applying to universities across the UAE and Malaysia. Independent counselors. Verified institutions. One workflow.
+          - generic [ref=e265]:
+            - generic [ref=e266]: Product
+            - generic [ref=e267]:
+              - link "Find programs" [ref=e268] [cursor=pointer]:
+                - /url: /search
+              - link "Compare" [ref=e269] [cursor=pointer]:
+                - /url: /compare
+              - link "Eligibility" [ref=e270] [cursor=pointer]:
+                - /url: /eligibility
+              - link "Scholarships" [ref=e271] [cursor=pointer]:
+                - /url: /content/scholarships
+              - link "Events" [ref=e272] [cursor=pointer]:
+                - /url: /events
+          - generic [ref=e273]:
+            - generic [ref=e274]: Destinations
+            - generic [ref=e275]:
+              - link "United Arab Emirates" [ref=e276] [cursor=pointer]:
+                - /url: /study-in-uae
+              - link "Malaysia" [ref=e277] [cursor=pointer]:
+                - /url: /study-in-malaysia
+              - link "Tuition guide" [ref=e278] [cursor=pointer]:
+                - /url: /guide
+              - link "Visa guide" [ref=e279] [cursor=pointer]:
+                - /url: /guide
+          - generic [ref=e280]:
+            - generic [ref=e281]: Company
+            - generic [ref=e282]:
+              - link "About" [ref=e283] [cursor=pointer]:
+                - /url: /about
+              - link "Counselor network" [ref=e284] [cursor=pointer]:
+                - /url: /counselor
+              - link "Partner with us" [ref=e285] [cursor=pointer]:
+                - /url: /contact
+              - link "Careers" [ref=e286] [cursor=pointer]:
+                - /url: /contact
+              - link "Contact" [ref=e287] [cursor=pointer]:
+                - /url: /contact
+          - generic [ref=e288]:
+            - generic [ref=e289]: Legal
+            - generic [ref=e290]:
+              - link "Terms" [ref=e291] [cursor=pointer]:
+                - /url: /terms
+              - link "Privacy" [ref=e292] [cursor=pointer]:
+                - /url: /privacy
+              - link "Cookies" [ref=e293] [cursor=pointer]:
+                - /url: /privacy
+              - link "Trust" [ref=e294] [cursor=pointer]:
+                - /url: /about
+        - generic [ref=e295]:
+          - generic [ref=e296]: © 2026 UNIGENI HOLDINGS · DUBAI / KUALA LUMPUR
+          - generic [ref=e297]: EN · العربية
+  - alert [ref=e298]
