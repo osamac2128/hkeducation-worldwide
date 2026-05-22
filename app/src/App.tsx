@@ -16,13 +16,19 @@ import Testimonials from './sections/Testimonials';
 import MediumsGlossary from './sections/MediumsGlossary';
 import Footer from './sections/Footer';
 import ProjectDetail from './pages/ProjectDetail';
-import { getProjectById } from './config';
+import UnigeniPage from './pages/UnigeniPage';
+import ScholarshipGuidePage from './pages/ScholarshipGuidePage';
+import BlogListPage from './pages/BlogListPage';
+import BlogPostPage from './pages/BlogPostPage';
+import { getProjectById, getBlogPostById } from './config';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [fluidActive, setFluidActive] = useState(true);
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const [activeSubpage, setActiveSubpage] = useState<string | null>(null);
+  const [activeBlogPost, setActiveBlogPost] = useState<string | null>(null);
   const lenisRef = useRef<Lenis | null>(null);
   const savedScrollRef = useRef(0);
   const pendingScrollRef = useRef<number | null>(null);
@@ -38,6 +44,30 @@ function App() {
     pendingScrollRef.current = savedScrollRef.current;
     setSelectedProjectId(null);
   };
+  const handleSubpageNavigate = (pageId: string) => {
+    savedScrollRef.current = window.scrollY;
+    pendingScrollRef.current = 0;
+    setActiveSubpage(pageId);
+    setSelectedProjectId(null);
+    setActiveBlogPost(null);
+  };
+
+  const handleSubpageBack = () => {
+    pendingScrollRef.current = savedScrollRef.current;
+    setActiveSubpage(null);
+  };
+
+  const handleSelectBlogPost = (postId: string) => {
+    savedScrollRef.current = window.scrollY;
+    pendingScrollRef.current = 0;
+    setActiveBlogPost(postId);
+  };
+
+  const handleBlogPostBack = () => {
+    pendingScrollRef.current = 0;
+    setActiveBlogPost(null);
+  };
+
 
   useLayoutEffect(() => {
     if (pendingScrollRef.current === null) return;
@@ -49,7 +79,7 @@ function App() {
         lenisRef.current?.scrollTo(target, { immediate: true, force: true });
       });
     });
-  }, [selectedProjectId]);
+  }, [selectedProjectId, activeSubpage, activeBlogPost]);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -93,7 +123,74 @@ function App() {
     observer.observe(philEl);
     observer.observe(galleryEl);
     return () => observer.disconnect();
-  }, [selectedProject]);
+  }, [selectedProject, activeSubpage, activeBlogPost]);
+
+
+  // Blog routing
+  const currentBlogPost = activeBlogPost ? getBlogPostById(activeBlogPost) : null;
+
+  if (activeSubpage === 'blog') {
+    if (currentBlogPost) {
+      return (
+        <HelmetProvider>
+          <SEO
+            title={`${currentBlogPost.title} | HK Education Worldwide Blog`}
+            description={currentBlogPost.subtitle}
+          />
+          <div style={{ position: 'relative' }}>
+            <FluidBackground isActive={true} />
+            <BlogPostPage post={currentBlogPost} onBack={handleBlogPostBack} />
+          </div>
+        </HelmetProvider>
+      );
+    }
+    return (
+      <HelmetProvider>
+        <SEO
+          title="Blog \u2014 Insights & Guides | HK Education Worldwide"
+          description="Guides, scholarship tips, and study abroad insights for Pakistani students heading to Malaysia and the UAE."
+        />
+        <div style={{ position: 'relative' }}>
+          <FluidBackground isActive={true} />
+          <BlogListPage 
+            onBack={handleSubpageBack} 
+            onSelectPost={handleSelectBlogPost} 
+          />
+        </div>
+      </HelmetProvider>
+    );
+  }
+
+  // Subpage rendering
+  if (activeSubpage === 'unigeni') {
+    return (
+      <HelmetProvider>
+        <SEO
+          title="UniGeni — AI Study Tools | HK Education Worldwide"
+          description="Discover UniGeni — a free AI-powered platform to find universities, scholarships, and programs in Malaysia and UAE."
+        />
+        <div style={{ position: 'relative' }}>
+          <FluidBackground isActive={true} />
+          <UnigeniPage onBack={handleSubpageBack} onNavigateToScholarships={() => handleSubpageNavigate('scholarships')} />
+        </div>
+      </HelmetProvider>
+    );
+  }
+
+  if (activeSubpage === 'scholarships') {
+    return (
+      <HelmetProvider>
+        <SEO
+          title="Scholarship Finder | HK Education Worldwide"
+          description="Find 120+ scholarships across Malaysia and UAE universities with UniGeni's AI-powered matching."
+        />
+        <div style={{ position: 'relative' }}>
+          <FluidBackground isActive={true} />
+          <ScholarshipGuidePage onBack={handleSubpageBack} onNavigateToUnigeni={() => handleSubpageNavigate('unigeni')} />
+        </div>
+      </HelmetProvider>
+    );
+  }
 
   if (selectedProject) {
     return (
@@ -115,7 +212,7 @@ function App() {
       <SEO />
       <div style={{ position: 'relative' }}>
         <FluidBackground isActive={fluidActive} />
-        <Navigation />
+        <Navigation onSubpageClick={handleSubpageNavigate} />
         <WhatsAppFab />
 
       <div id="hero-section" style={{ position: 'relative', zIndex: 1 }}>
